@@ -10,10 +10,6 @@ import java.util.List;
  * The usage of any additional packages (such as java.util.*) is forbidden.
  */
 public class ArrayTasks {
-    public static void main(String[] args) {
-        System.out.println(new ArrayTasks().generateNumbers(7));
-    }
-
     /**
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
