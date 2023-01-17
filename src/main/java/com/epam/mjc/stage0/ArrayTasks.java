@@ -1,15 +1,12 @@
 package com.epam.mjc.stage0;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Here are the tasks for working with the arrays.
  * <p>
  * The usage of any additional packages (such as java.util.*) is forbidden.
  */
 public class ArrayTasks {
+
     /**
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
@@ -29,11 +26,13 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-        int arr[]=new int[length];
-        for (int i = 0; i <= length; i++) {
-            arr[i]=i+1;
+        int[] array = new int[length];
+        int temp = 1;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = temp;
+            temp++;
         }
-        return arr;
+        return array;
     }
 
     /**
@@ -45,9 +44,9 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-        int sum=0;
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum+=arr[i];
+            sum += arr[i];
         }
         return sum;
     }
@@ -63,7 +62,7 @@ public class ArrayTasks {
      */
     public int findIndexOfNumber(int[] arr, int number) {
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i]==number){
+            if (arr[i] == number) {
                 return i;
             }
         }
@@ -79,12 +78,12 @@ public class ArrayTasks {
      * arr = ["Bob", "Nick"]               -> ["Nick", "Bob"]
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
-    public static String[] reverseArray(String[] arr) {
-        String[] strs=new String[arr.length];
-        for (int i = arr.length; i >0 ; i--) {
-            strs[arr.length-i]=arr[i-1];
+    public String[] reverseArray(String[] arr) {
+        String[] res = new String[arr.length];
+        for (int i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+            res[i] = arr[j];
         }
-        return strs;
+        return res;
     }
 
     /**
@@ -99,20 +98,20 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        int count=0;
+        int count = 0;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i]>0){
+            if (arr[i] > 0) {
                 count++;
             }
         }
-        int positive[]=new int[count];
-        for (int j=0, i = 0; i < arr.length; i++) {
-            if (arr[i]>0){
-                positive[j]=positive[i];
+        int[] ans = new int[count];
+        for (int i = 0, j = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                ans[j] = arr[i];
                 j++;
             }
         }
-        return positive;
+        return ans;
     }
 
     /**
